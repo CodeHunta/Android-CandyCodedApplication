@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Candy Coded</string>
     <string name="products_title">Products</string>
+    <string name="home_address">3 Abike Close off Miyaki street, Oworonshoki, Lagos</string>
+    <string name="phone_number">(+234) 803 232 4739</string>
+    <string name="open_time">Everyday 10am-10pm</string>
+    <string name="candy_store">candy store</string>
+    <string name="hours">hours</string>
+    <string name="maps">maps</string>
+    <string name="text_view">TextView</string>
+    <string name="image_view">imageView</string>
+    <string name="share_candy">Share Candy</string>
+    <string name="store_info">Store Info</string>
+    <string name="email_address">manstylo@gmail.com</string>
 </resources>

@@ -3,7 +3,7 @@ package com.pluralsight.candycoded;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -44,5 +44,11 @@ public class InfoActivity extends AppCompatActivity {
         Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
         phoneIntent.setData(Uri.parse("tel:08032324739"));
         startActivity(phoneIntent);
+    }
+
+    public void createEmailIntent (View view) {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "manstylo@gmail.com", null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "App Review");
+        startActivity(emailIntent);
     }
 }

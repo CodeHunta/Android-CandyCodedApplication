@@ -1,10 +1,12 @@
 package com.pluralsight.candycoded;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 
+@SuppressLint("Registered")
 public class SettingsActivity extends PreferenceActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

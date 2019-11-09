@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         addCandiesToDatabase(candies);
 
                         SQLiteDatabase db = candyDbHelper.getWritableDatabase();
-                        Cursor cursor = db.rawQuery("SELECT * FROM candy", null);
+                        Cursor cursor;
                         //adapter.changeCursor(cursor);
                     }
                 });
