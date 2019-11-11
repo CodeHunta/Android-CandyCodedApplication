@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -36,7 +37,7 @@ import static org.mockito.Mockito.verify;
 @RunWith(PowerMockRunner.class)
 public class _2_StartTheGoogleMapsActivity {
 
-    public static final String LAYOUT_XML_FILE = "res/layout/activity_info.xml";
+    private static final String LAYOUT_XML_FILE = "res/layout/activity_info.xml";
     private static boolean called_uri_parse = false;
     private static boolean created_intent = false;
     private static boolean created_intent_correctly = false;
@@ -162,7 +163,7 @@ public class _2_StartTheGoogleMapsActivity {
                 new XMLTestHelpers.ViewContainer("@+id/text_view_address", "createMapIntent", "true");
         boolean address_set_correct =  viewContainers.contains(addressView);
 
-        Assert.assertTrue("In activity_info.xml, the TextView text_view_address does not have " +
+        assertTrue("In activity_info.xml, the TextView text_view_address does not have " +
                         "the clickable and onClick properties set.",
                 address_set_correct);
     }
@@ -173,7 +174,7 @@ public class _2_StartTheGoogleMapsActivity {
         ArrayList<XMLTestHelpers.ViewContainer> viewContainers = new ArrayList<XMLTestHelpers.ViewContainer>();
 
         try {
-            inputStream = this.getClass().getClassLoader().getResourceAsStream(layoutFileName);
+            inputStream = Objects.requireNonNull(this.getClass().getClassLoader()).getResourceAsStream(layoutFileName);
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(false);
             XmlPullParser parser = factory.newPullParser();
@@ -184,6 +185,7 @@ public class _2_StartTheGoogleMapsActivity {
             e.printStackTrace();
         } finally {
             try {
+                assert inputStream != null;
                 inputStream.close();
             } catch (IOException e) {
                 e.printStackTrace();

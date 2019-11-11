@@ -11,8 +11,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.pluralsight.candycoded.DB.CandyContract.CandyEntry;
-import com.pluralsight.candycoded.DB.CandyDbHelper;
+import com.pluralsight.candycoded.dB.CandyContract.CandyEntry;
+import com.pluralsight.candycoded.dB.CandyDbHelper;
 import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {

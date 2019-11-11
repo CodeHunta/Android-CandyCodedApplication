@@ -35,7 +35,6 @@ import static org.mockito.Mockito.verify;
 public class _3_StartThePhoneActivity {
 
     public static final String LAYOUT_XML_FILE = "res/layout/activity_info.xml";
-    private static InfoActivity infoActivity;
     private static boolean created_intent = false;
     private static boolean set_data = false;
     private static boolean called_uri_parse = false;
@@ -45,7 +44,7 @@ public class _3_StartThePhoneActivity {
     @BeforeClass
     public static void setup() throws Exception {
         // Spy on a MainActivity instance.
-        infoActivity = PowerMockito.spy(new InfoActivity());
+        InfoActivity infoActivity = PowerMockito.spy(new InfoActivity());
         // Create a fake Bundle to pass in.
         Bundle bundle = mock(Bundle.class);
         Uri mockUri = mock(Uri.class);
@@ -132,7 +131,7 @@ public class _3_StartThePhoneActivity {
                 new XMLTestHelpers.ViewContainer("@+id/text_view_phone", "createPhoneIntent", "true");
         boolean address_set_correct =  viewContainers.contains(addressView);
 
-        Assert.assertTrue("In activity_info.xml, the TextView text_view_phone does not have " +
+        assertTrue("In activity_info.xml, the TextView text_view_phone does not have " +
                         "the clickable and onClick properties set.",
                 address_set_correct);
     }

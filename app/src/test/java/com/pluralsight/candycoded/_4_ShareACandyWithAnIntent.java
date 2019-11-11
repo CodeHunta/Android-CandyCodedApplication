@@ -32,7 +32,6 @@ public class _4_ShareACandyWithAnIntent {
     public static final String HASHTAG_CANDYCODED = " #candycoded";
     public static final String mCandyImageUrl = "";
 
-    private static DetailActivity detailActivity;
     private static boolean onOptionsItemSelected_result = true;
     private static boolean called_createShareIntent = false;
     private static boolean created_intent = false;
@@ -44,7 +43,7 @@ public class _4_ShareACandyWithAnIntent {
     @BeforeClass
     public static void setup() throws Exception {
         // Spy on a MainActivity instance.
-        detailActivity = PowerMockito.spy(new DetailActivity());
+        DetailActivity detailActivity = PowerMockito.spy(new DetailActivity());
         // Create a fake Bundle to pass in.
         Bundle bundle = mock(Bundle.class);
 
